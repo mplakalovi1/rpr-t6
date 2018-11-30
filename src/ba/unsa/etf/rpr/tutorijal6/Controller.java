@@ -197,11 +197,46 @@ public class Controller {
                     dateField.getStyleClass().removeAll("poljeNeispravno");
                     dateField.getStyleClass().add("poljeIspravno");
                     datumValidan = true;
+
+                    jmbgValidan = false;
+                    jmbgField.getStyleClass().add("poljeNeispravno");
+                    jmbgField.textProperty().addListener(new ChangeListener<String>() {
+                        @Override
+                        public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
+                            if (validanJmbg(n)) {
+                                jmbgField.getStyleClass().removeAll("poljeNeispravno");
+                                jmbgField.getStyleClass().add("poljeIspravno");
+                                jmbgValidan = true;
+                            } else {
+                                jmbgField.getStyleClass().removeAll("poljeIspravno");
+                                jmbgField.getStyleClass().add("poljeNeispravno");
+                                jmbgValidan = false;
+                            }
+                        }
+                    });
                 } else {
                     dateField.getStyleClass().removeAll("poljeIspravno");
                     dateField.getStyleClass().add("poljeNeispravno");
                     datumValidan = false;
+
+                    jmbgValidan = false;
+                    jmbgField.getStyleClass().add("poljeNeispravno");
+                    jmbgField.textProperty().addListener(new ChangeListener<String>() {
+                        @Override
+                        public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
+                            if (validanJmbg(n)) {
+                                jmbgField.getStyleClass().removeAll("poljeNeispravno");
+                                jmbgField.getStyleClass().add("poljeIspravno");
+                                jmbgValidan = true;
+                            } else {
+                                jmbgField.getStyleClass().removeAll("poljeIspravno");
+                                jmbgField.getStyleClass().add("poljeNeispravno");
+                                jmbgValidan = false;
+                            }
+                        }
+                    });
                 }
+
             }
         });
         telBrojValidan = true;
