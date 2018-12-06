@@ -80,7 +80,7 @@ class MainTest {
         ChoiceBox odsjek = robot.lookup("#departmentBox").queryAs(ChoiceBox.class);
         robot.clickOn("#departmentBox").clickOn("AE");
         ChoiceBox godina = robot.lookup("#yearBox").queryAs(ChoiceBox.class);
-        robot.clickOn("#yearBox").clickOn("Treca");
+        robot.clickOn("#yearBox").clickOn("Treća");
         ChoiceBox ciklus = robot.lookup("#cycleBox").queryAs(ChoiceBox.class);
         robot.clickOn("#cycleBox").clickOn("Bachelor");
         ChoiceBox status = robot.lookup("#statusBox").queryAs(ChoiceBox.class);
@@ -89,7 +89,7 @@ class MainTest {
         robot.clickOn("#categoryBox").clickOn("NE");
         assertAll("podaci o studiju",()->{
             assertEquals("AE", odsjek.getValue().toString());
-            assertEquals("Treca", godina.getValue().toString());
+            assertEquals("Treća", godina.getValue().toString());
             assertEquals("Bachelor", ciklus.getValue().toString());
             assertEquals("Redovan", status.getValue().toString());
             assertEquals("NE", kategorija.getValue().toString());
